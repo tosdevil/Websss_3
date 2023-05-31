@@ -14,15 +14,13 @@
 					</div>
 					<input type = "text" placeholder="Оставьте комментарий" class = 'comment_input'>
 					<div class="comment_section">
-						<div class="single_comment">
-							<h1 class="author_comment">Zheka123</h1>
-							<p class="comment_text">тачка зачет</p>
-						</div>
 						{% for comment in comments_list %}
+						{% if comment.photo_id_id == object.id %}
 						<div class="single_comment">
 							<h1 class="author_comment">{{ comment.author }}</h1>
 							<p class="comment_text">{{ comment.comment_text }}</p>
 						</div>
+						{% endif %}
 						{% endfor %}
 					</div>
 	 </div>
