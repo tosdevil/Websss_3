@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Галерея{% endblock %}
+
+{% block content %}
+    <div class="all_photos">
+			{% for el in photos %}
+				<div class="single_photo_block">
+					<img src="{{ el.file_name }}" alt="" class="photo_in_block">
+					<div class="like_and_comment_section">
+						<div class="like_block">
+							<i class="bi bi-suit-heart like_icon"></i>
+							<p class="like_counter">{{ el.like_counter }}</p>
+						</div>
+						<i class="bi bi-chat comment_icon"></i>
+					</div>
+					</div>
+			{% endfor %}
+				
+			<!-- </div>
+			<div class="single_photo_block">
+				<img src="https://i.pinimg.com/564x/14/93/67/149367a550e45e2d50f67c1f95c8e0de.jpg" alt="" class="photo_in_block">
+				<div class="like_and_comment_section">
+					<div class="like_block">
+						<i class="bi bi-suit-heart like_icon"></i>
+						<p class="like_counter">1253</p>
+					</div>
+					<i class="bi bi-chat comment_icon"></i>
+				</div>
+			</div>
+		</div> -->
+{% endblock %}
