@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление комментария{% endblock %}
+
+{% block content %}
+    <div class = "featuring">
+        <h1>Добавление комментария</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.author }}<br>
+						{{ form.comment_text }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить задачу</button>
+        </form>
+    </div>
+{% endblock %}

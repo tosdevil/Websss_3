@@ -12,16 +12,20 @@
 							<p class="like_counter">{{ object.like_counter }}</p>
 						</div>
 					</div>
-					<input type = "text" placeholder="Оставьте комментарий" class = 'comment_input'>
+					<a href = "{% url 'add_comment' object.id %}"><i class="bi bi-chat-text"></i> Оставить комментарий</a>
 					<div class="comment_section">
+						{% if comments.count == 0 and comment.photo_id == object.id %}
+						<p>Здесь, пока что, нет комментариев.</p>
+						{% else %}
 						{% for comment in comments_list %}
-						{% if comment.photo_id_id == object.id %}
+						{% if comment.photo_id == object.id %}
 						<div class="single_comment">
 							<h1 class="author_comment">{{ comment.author }}</h1>
 							<p class="comment_text">{{ comment.comment_text }}</p>
 						</div>
 						{% endif %}
 						{% endfor %}
+						{% endif %}
 					</div>
 	 </div>
 </div>

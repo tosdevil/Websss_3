@@ -3,6 +3,26 @@
 	margin: 0;
 }
 
+.single_photo_block a {
+	text-decoration: none;
+	color:#252525;
+	text-align: center;
+}
+
+.single_photo_block h1 
+{
+	font-size: 25px;
+	margin-bottom: 5px;
+}
+
+.single_comment
+{
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #252525;
+	border-radius: 5px;
+}
+
 @keyframes fadeInAnimation {
 	0% {
 			opacity: 0;
@@ -85,6 +105,7 @@
 	display: flex;
 	flex-direction: column;
 	box-shadow: 10px 5px 5px #808080;
+	background-color: white;
  }
 
  .photo_in_block {
