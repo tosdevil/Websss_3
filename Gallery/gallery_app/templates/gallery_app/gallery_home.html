@@ -12,7 +12,7 @@
 							<i class="bi bi-suit-heart like_icon"></i>
 							<p class="like_counter">{{ el.like_counter }}</p>
 						</div>
-						<i class="bi bi-chat comment_icon"></i>
+						<a href="{% url 'commentview' el.id %}"><i class="bi bi-chat comment_icon"></i></a>
 					</div>
 					</div>
 			{% endfor %}

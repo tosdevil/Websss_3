@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Фотография{% endblock %}
+
+{% block content %}
+<div class="all_photos">
+   <div class="single_photo_block">
+					<img src="{{ object }}" alt="" class="photo_in_block">
+					<div class="like_and_comment_section">
+						<div class="like_block">
+							<i class="bi bi-suit-heart like_icon"></i>
+							<p class="like_counter">{{ object.like_counter }}</p>
+						</div>
+					</div>
+					<input type = "text" placeholder="Оставьте комментарий" class = 'comment_input'>
+					<div class="comment_section">
+						<div class="single_comment">
+							<h1 class="author_comment">Zheka123</h1>
+							<p class="comment_text">тачка зачет</p>
+						</div>
+						{% for comment in comments_list %}
+						<div class="single_comment">
+							<h1 class="author_comment">{{ comment.author }}</h1>
+							<p class="comment_text">{{ comment.comment_text }}</p>
+						</div>
+						{% endfor %}
+					</div>
+	 </div>
+</div>
+{% endblock %}
